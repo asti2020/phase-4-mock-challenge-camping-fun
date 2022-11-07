@@ -6,8 +6,8 @@ class Signup < ApplicationRecord
 
 
     def time_slot_available
-        if self.activity.signups.any? {|signup| signup.time == 23 && self.time == 23}
-            errors.add(:time, " => Time slot will be an hour activity after this!!")
+        if self.activity.signups.any? {|signup| signup.time == 23 && self.time ==23}
+            errors.add(:time, "Time slot is not available")
         end
     end
 end
